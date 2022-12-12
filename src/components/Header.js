@@ -10,12 +10,13 @@ function Header() {
       {/* Header Left */}
       <HeaderLeft>
         <HeaderAvatar />
-
         <AccessTime />
+
       </HeaderLeft>
       {/* Header search */}
 
       <HeaderSearch>
+
         <SearchIcon /> 
         <input placeholder='Search PAPAFAM' />
       </HeaderSearch>
@@ -30,27 +31,6 @@ function Header() {
 }
 
 export default Header
-
-const HeaderSearch = styled.div`
-  flex: 0.4;
-  opacity: 1;
-  border-radius: 6px;
-  background-color: #421f44;
-  text-align: center;
-  display: flex;
-  padding: 0 50px;
-  color: gray;
-  border: 1px solid gray;
-
-  > input {
-    background-color: transparent;
-    border: none;
-    text-align: center;
-    min-width: 30vw;
-    outline: 0;
-    color: white;
-  }
-`
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -71,7 +51,27 @@ const HeaderLeft = styled.div`
 
   > .MuiSvgIcon-root {
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 20px;
+  }
+`
+const HeaderSearch = styled.div`
+  flex: 0.4;
+  opacity: 1;
+  border-radius: 6px;
+  background-color: #421f44;
+  text-align: center;
+  display: flex;
+  padding: 0 50px;
+  color: gray;
+  border: 1px solid gray;
+
+  > input {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    min-width: 30vw;
+    outline: 0;
+    color: white;
   }
 `
 const HeaderRight = styled.div`
