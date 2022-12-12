@@ -18,7 +18,7 @@ function App() {
 
   const [user,loading] = useAuthState(auth)
 
-  if(loading){
+  if(true){
     return (
       <AppLoading>
         <AppLoadingContents>
@@ -28,7 +28,7 @@ function App() {
             />
 
 <Spinner
-        color="red"
+        color="green"
         fadeIn='none'
         name="ball-spin-fade-loader"
       />
