@@ -4,24 +4,26 @@ import React from 'react'
 import styled from 'styled-components'
 import SearchIcon from '@mui/icons-material/Search';
 import { HelpOutline } from '@mui/icons-material';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firabase';
 function Header() {
+  const [user] = useAuthState(auth)
   return (
     <HeaderContainer>
-      {/* Header Left */}
       <HeaderLeft>
-        <HeaderAvatar />
+        <HeaderAvatar
+        onClick={() => auth.signOut()}
+          alt={user?.displayName}
+          src={user?.photoURL}
+        />
         <AccessTime />
-
       </HeaderLeft>
-      {/* Header search */}
 
       <HeaderSearch>
-
         <SearchIcon /> 
-        <input placeholder='Search PAPAFAM' />
+        <input placeholder='Search UIFAM' />
       </HeaderSearch>
 
-      {/* Header Right */}
 
       <HeaderRight>
           <HelpOutline />

@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import SidebarOptions from './SidebarOptions'
 import AddIcon from '@mui/icons-material/Add';
 import { useCollection } from 'react-firebase-hooks/firestore'
-import { db } from '../firabase';
+import { auth, db } from '../firabase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Sidebar() {
     const [Channels , loading, error] = useCollection(db.collection("rooms"))
+    const [user] = useAuthState(auth)
   return (
     <SidebarContainer>
         <SidebarHeader>
@@ -15,7 +17,7 @@ function Sidebar() {
                 <h2>LUCKY FAM HQ</h2>
                 <h3>
                     <FiberManualRecord />
-                    Laxman Boda
+                    {user.displayName}
                 </h3>
             </SidebarInfo>
             <CreateOutlined />
